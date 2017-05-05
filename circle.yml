@@ -8,8 +8,7 @@ dependencies:
     - ".stack-work"
   pre:
     - curl -L https://github.com/commercialhaskell/stack/releases/download/v1.1.2/stack-1.1.2-linux-x86_64.tar.gz | tar zx -C /tmp
-    - gunzip /tmp/stack.gz && chmod +x /tmp/stack
-    - sudo mv /tmp/stack /usr/bin/stack
+    - sudo mv /tmp/stack-1.1.2-linux-x86_64/stack /usr/bin
   override:
     - stack update
     - stack setup
