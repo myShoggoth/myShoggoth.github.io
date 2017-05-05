@@ -1,3 +1,8 @@
+general:
+  branches:
+    only:
+      - hakyll # list of branches to build
+
 machine:
   timezone:
     America/Los_Angeles
@@ -10,25 +15,21 @@ dependencies:
     - curl -L https://github.com/commercialhaskell/stack/releases/download/v1.1.2/stack-1.1.2-linux-x86_64.tar.gz | tar zx -C /tmp
     - sudo mv /tmp/stack-1.1.2-linux-x86_64/stack /usr/bin
   override:
+    - stack update
     - stack setup
-    - rm -fr $(stack path --dist-dir) $(stack path --local-install-root)
-    - stack install hlint packdeps cabal-install
-    - stack build --fast
-    - stack build --fast --pedantic --haddock --test --no-run-tests --no-haddock-deps
+    - stack build --no-system-ghc --install-ghc --only-dependencies
 
 test:
-  override:
-    - stack test
-    - git ls-files | grep '\.l\?hs$' | xargs stack exec -- hlint -X QuasiQuotes "$@"
-    - stack exec -- cabal update
-    - stack exec --no-ghc-package-path -- cabal install --only-d --dry-run --reorder-goals
-    - stack exec -- packdeps *.cabal || true
 
-post:
+  override:
+    - stack build --no-system-ghc --install-ghc
+
+  post:
     - git submodule init
     - git submodule update
     - cd _site/ && git checkout master
-    - stack build
+    - cd _site/ && git pull origin master
+    - stack exec myShoggoth build
 
 deployment:
 
