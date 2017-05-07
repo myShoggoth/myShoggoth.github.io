@@ -5,3 +5,39 @@
     <p class="lead blog-description">Surprise, a website!</p>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 blog-main">
+      $for(posts)$
+        <div class="blog-post">
+          <h2 class="blog-post-title"><a href="$url$">$title$</a></h2>
+          <p class="blog-post-meta">$date$</p>
+        </div>
+      $endfor$
+      <nav class="blog-pagination">
+        <a class="btn btn-outline-primary" href="#">Older</a>
+        <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+      </nav>
+    </div>
+
+    <div class="col-sm-3 offset-sm-1 blog-sidebar">
+      <div class="sidebar-module sidebar-module-inset">
+        <h4>About</h4>
+        <p>This is the website for Andrew F. Boardman. You can see more about my background <a href="/about.html">here</a>.</p>
+        <p>I talk about technology, startups, finances, and other things that catch my eye.</p>
+      </div>
+      <div class="sidebar-module">
+        <h4>Elsewhere</h4>
+        <ol class="list-unstyled">
+          <li><a href="mailto:andrew@myshoggoth.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/andrewboardman/">LinkedIn Profile</a></li>
+          <li><a href="https://twitter.com/myShoggoth">Twitter</a></li>
+          <li><a href="https://angel.co/andrew-boardman">AngelList</a></li>
+          <li><a href="https://github.com/myShoggoth">GitHub</a></li>
+          <li><a href="http://stackoverflow.com/users/520690/andrew-boardman">Stack Overflow</a></li>
+        </ol>
+      </div>
+    </div><!-- /.blog-sidebar -->
+  </div><!-- /.row -->
+</div>
