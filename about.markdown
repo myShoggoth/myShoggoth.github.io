@@ -27,21 +27,3 @@ capitalization table product.
 and systems architecture, manager mentoring, product and project management,
 due diligence for financial deals, term sheet evaluation, and software
 development.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Andrew's consulting practice currently includes competitive analysis, software and systems architecture, manager mentoring, product and project management, due diligence for financial deals, term sheet evaluation, and software development.
