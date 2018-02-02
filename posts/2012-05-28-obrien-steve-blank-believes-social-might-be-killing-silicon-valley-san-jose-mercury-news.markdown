@@ -1,5 +1,7 @@
 ---
 title: "O'Brien: Steve Blank believes social might be killing Silicon Valley"
+description: test
+imgname: DSC_0030
 ---
 
 > Amid the buildup to the Facebook IPO, serial entrepreneur Steve Blank was sounding an ominous warning to anyone who would listen.

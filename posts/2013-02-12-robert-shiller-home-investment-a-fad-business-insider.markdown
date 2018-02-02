@@ -1,5 +1,7 @@
 ---
 title: "Robert Shiller: Home Investment A Fad - Business Insider"
+description: test
+imgname: DSC_0030
 ---
 
 > "Absolutely!" Shiller exclaimed. "Housing traditionally is not viewed as a great investment. It takes maintenance, it depreciates, it goes out of style. All of those are problems. And there's technical progress in housing. So, new ones are better."

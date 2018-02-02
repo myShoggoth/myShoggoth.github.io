@@ -2,24 +2,31 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
-
+import           Hakyll.Web.Sass (sassCompiler)
 
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-    match "images/*" $ do
+    match "assets/img/*" $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "css/*" $ do
+    match "assets/sass/now-ui-kit.scss" $ do
+        route   $ constRoute "assets/css/now-ui-kit.css"
+        let compressCssItem = fmap compressCss
+        compile (compressCssItem <$> sassCompiler)
+
+    match "assets/css/bootstrap.min.css" $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["about.markdown", "contact.markdown"]) $ do
-        route   $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/page.html" defaultContext
-            >>= relativizeUrls
+    match "assets/js/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    match "assets/fonts/*" $ do
+        route   idRoute
+        compile copyFileCompiler
 
     match "posts/*" $ do
         route $ setExtension "html"
@@ -28,28 +35,12 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/page.html" postCtx
             >>= relativizeUrls
 
-    create ["archive.html"] $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
-                    defaultContext
-
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/page.html" archiveCtx
-                >>= relativizeUrls
-
-
     match "index.html" $ do
         route idRoute
         compile $ do
             posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
                     defaultContext
 
             getResourceBody
