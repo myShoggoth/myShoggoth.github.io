@@ -1,7 +1,7 @@
 ---
 title: Startup Financing, the 10,000 ft. View
-description: test
-imgname: DSC_0030
+description: A brief overview of startup financing terminology.
+imgname: IMG_5189-PANO
 ---
 
 When negotiating a round of financing it is critical to look at the whole of what is being offered, and not just fixating on a particular term (the classic example is overvaluing the pre-money valuation). There is a short term view (how much of the company are the investors buying for how much money) and a long term view (what happens if the company has a down round in the future? A mediocre exit? A home run?).

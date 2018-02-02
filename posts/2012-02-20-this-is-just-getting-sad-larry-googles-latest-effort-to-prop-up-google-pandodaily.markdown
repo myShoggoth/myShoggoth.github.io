@@ -1,7 +1,7 @@
 ---
 title: "This Is Just Getting Sad, Larry: Google’s Latest Effort to Prop Up Google+"
-description: test
-imgname: DSC_0030
+description: In which Google sells their soul to fight Facebook and fails anyway.
+imgname: IMG_4463
 ---
 
 > Google continues to scorch everything it once considered sacred in the name of propping up the most successful social media site that no one I know actually uses. (Yes, other than you, Scoble.)

@@ -10,10 +10,6 @@ imgname: DSC_0030
       <div class="col-md-8 ml-auto mr-auto">
         <h2 class="text-center title">Live Streaming
           <br><small class="description">Head banging the nerdy way.</small></h2>
-        <h5 class="text-center description">Have you ever wondered how
-          veteran programmers work, solve problems, and design systems?
-          Andrew live streams real programming once a week and
-          explains what is going on in his head, for better or worse.</h5>
         <div class="text-center">
           <iframe
               src="http://player.twitch.tv/?channel=myShoggoth&muted=true"
@@ -24,6 +20,10 @@ imgname: DSC_0030
               allowfullscreen="true">
           </iframe>
         </div>
+        <h5 class="text-center description">Have you ever wondered how
+          veteran programmers work, solve problems, and design systems?
+          Andrew live streams programming once a week and
+          explains what is going on in his head, for better or worse.</h5>
       </div>
     </div>
   </div>
@@ -36,8 +36,28 @@ imgname: DSC_0030
         <h2 class="text-center title">Writings
           <br><small class="description">The best of the best of the best of
             best.</small></h2>
-        <h5 class="text-center description"></h5>
       </div>
+    </div>
+    <div class="row">
+      $for(posts)$
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-blog">
+            $if(imgname)$
+              <div class="card-image">
+                <img class="img rounded" src="assets/img/$imgname$.jpg">
+              </div>
+            $endif$
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="$url$">$title$</a>
+              </h5>
+              <p class="card-description">
+                $description$
+              </p>
+            </div>
+          </div>
+        </div>
+      $endfor$
     </div>
   </div>
 </div>
@@ -47,7 +67,7 @@ imgname: DSC_0030
     <div class="row">
       <div class="col-md-8 ml-auto mr-auto">
         <h2 class="text-center title">Projects
-          <br><small class="description">How I spent my non-existant free time.
+          <br><small class="description">How I spend my non-existant free time.
             </small></h2>
         <h5 class="text-center description"></h5>
       </div>
