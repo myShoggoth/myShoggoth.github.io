@@ -28,10 +28,17 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "posts/*" $ do
+    match "posts/*.markdown" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= loadAndApplyTemplate "templates/page.html" postCtx
+            >>= relativizeUrls
+
+    match "posts/*.html" $ do
+        route idRoute
+        compile $ getResourceBody
+            >>= loadAndApplyTemplate "templates/post.html" postCtx
             >>= loadAndApplyTemplate "templates/page.html" postCtx
             >>= relativizeUrls
 
