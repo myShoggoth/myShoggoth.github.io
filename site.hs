@@ -7,7 +7,7 @@ import           Hakyll.Web.Sass (sassCompiler)
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-    match "assets/img/*" $ do
+    match "assets/img/**" $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -16,15 +16,15 @@ main = hakyll $ do
         let compressCssItem = fmap compressCss
         compile (compressCssItem <$> sassCompiler)
 
-    match "assets/css/bootstrap.min.css" $ do
+    match "assets/css/**.css" $ do
         route   idRoute
         compile compressCssCompiler
 
-    match "assets/js/*" $ do
+    match "assets/js/**" $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "assets/fonts/*" $ do
+    match "assets/fonts/**" $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -55,7 +55,7 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/page.html" indexCtx
                 >>= relativizeUrls
 
-    match "templates/*" $ compile templateCompiler
+    match "templates/**" $ compile templateCompiler
 
 
 --------------------------------------------------------------------------------
