@@ -41,7 +41,7 @@ imgname: DSC_0030
     <div class="row">
       $for(posts)$
         <div class="col-md-6 col-lg-4">
-          <div class="card card-blog">
+          <div class="card card-blog" data-background-color="black">
             $if(imgname)$
               <div class="card-image">
                 <a href="$url$">
@@ -73,6 +73,32 @@ imgname: DSC_0030
             </small></h2>
         <h5 class="text-center description"></h5>
       </div>
+    </div>
+    <div class="row">
+      $for(projects)$
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-blog" data-background-color="black">
+            $if(imgname)$
+              <div class="card-image">
+                <a href="$url$">
+                  <img class="img rounded" src="assets/img/$imgname$.jpg">
+                </a>
+              </div>
+            $endif$
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="$url$">$title$</a>
+              </h5>
+              <p class="card-description">
+                $description$
+              </p>
+              $if(github)$
+                <p><a href="$github$" target="_blank"><img src="assets/img/GitHub-Mark-Light-32px.png"></a></p>
+              $endif$
+            </div>
+          </div>
+        </div>
+      $endfor$
     </div>
   </div>
 </div>
