@@ -12,9 +12,10 @@ dependencies:
     - "~/.stack"
     - ".stack-work"
   pre:
-    - curl -L https://github.com/commercialhaskell/stack/releases/download/v1.1.2/stack-1.1.2-linux-x86_64.tar.gz | tar zx -C /tmp
-    - sudo mv /tmp/stack-1.1.2-linux-x86_64/stack /usr/bin
+    - curl -L https://github.com/commercialhaskell/stack/releases/download/v1.6.3/stack-1.6.3-linux-x86_64.tar.gz | tar zx -C /tmp
+    - sudo mv /tmp/stack-1.6.3-linux-x86_64/stack /usr/bin
   override:
+    - stack upgrade
     - stack update
     - stack setup
     - stack build --no-system-ghc --install-ghc --only-dependencies
@@ -29,7 +30,8 @@ test:
     - git submodule update
     - cd _site/ && git checkout master
     - cd _site/ && git pull origin master
-    - stack exec myShoggoth build
+    - cd _site/ && git rm -rf .
+    - stack exec -- myShoggoth build
 
 deployment:
 
