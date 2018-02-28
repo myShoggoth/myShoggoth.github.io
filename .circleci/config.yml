@@ -11,7 +11,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-stack-{{ checksum "myshoggoth.cabal" }}
+            - v1-stack-{{ checksum "myShoggoth.cabal" }}
             - stack-work-
       - run:
           name: Build site executable
@@ -20,7 +20,7 @@ jobs:
           paths:
             - ~/myshoggoth/.stack-work
             - /root/.stack/
-          key: v1-stack-work-{{ checksum "myshoggoth.cabal" }}
+          key: v1-stack-work-{{ checksum "myShoggoth.cabal" }}
       - deploy:
           name: Deploy master to Github Pages
           command: |
