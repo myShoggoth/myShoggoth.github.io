@@ -1,0 +1,45 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/myshoggoth
+    docker:
+      - image: fpco/stack-build
+    branches:
+      only:
+        - source
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-stack-{{ checksum "myshoggoth.cabal" }}
+            - stack-work-
+      - run:
+          name: Build site executable
+          command: stack build
+      - save_cache:
+          paths:
+            - ~/myshoggoth/.stack-work
+            - /root/.stack/
+          key: v1-stack-work-{{ checksum "myshoggoth.cabal" }}
+      - deploy:
+          name: Deploy master to Github Pages
+          command: |
+            git config --global user.email circleci@circleci
+            git config --global user.name CircleCI
+            git submodule init
+            git submodule update
+            cd _site/ && git checkout master
+            cd _site/ && git pull origin master
+            cd _site/ && git rm -rf .
+            stack exec -- myShoggoth build
+            #  Commit master (live site)
+            cd _site/ && git status
+            cd _site/ && git add -all
+            cd _site/ && git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
+            cd _site/ && git push origin master
+            # Commit hakyll
+            git status
+            git add _site/
+            git commit -m "Update _site (`date '+%F %T %Z'`) [ci skip]"
+            # Push
+            git push origin hakyll
