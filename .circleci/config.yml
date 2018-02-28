@@ -6,7 +6,7 @@ jobs:
       - image: fpco/stack-build
     branches:
       only:
-        - source
+        - hakyll
     steps:
       - checkout
       - restore_cache:
