@@ -24,6 +24,8 @@ jobs:
       - run:
           name: Prepare the git submodules
           command: |
+            git config --global user.email circleci@circleci
+            git config --global user.name CircleCI
             git submodule init
             git submodule update
       - run:
