@@ -30,8 +30,11 @@ jobs:
             git submodule update
             ls -alF
             cd _site/ && git checkout master
+            ls -alF
             cd _site/ && git pull origin master
+            ls -alF
             cd _site/ && git rm -rf .
+            ls -alF
             stack exec -- myShoggoth build
             #  Commit master (live site)
             cd _site/ && git status
