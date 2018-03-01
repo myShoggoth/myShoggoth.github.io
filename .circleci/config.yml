@@ -21,29 +21,35 @@ jobs:
             - ~/myshoggoth/.stack-work
             - /root/.stack/
           key: v1-stack-work-{{ checksum "myShoggoth.cabal" }}
-      - deploy:
-          name: Deploy master to Github Pages
+      - initialize_submodules:
+          name: Prepare the git submodules
           command: |
-            git config --global user.email circleci@circleci
-            git config --global user.name CircleCI
             git submodule init
             git submodule update
-            ls -alF
-            cd _site/ && git checkout master
-            ls -alF
-            cd _site/ && git pull origin master
-            ls -alF
-            cd _site/ && git rm -rf .
-            ls -alF
-            stack exec -- myShoggoth build
-            #  Commit master (live site)
-            cd _site/ && git status
-            cd _site/ && git add -all
-            cd _site/ && git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
-            cd _site/ && git push origin master
-            # Commit hakyll
+      - checkout_master:
+          name: Checkout the master branch (live site)
+          working_directory: ~/myshoggoth/_site
+          command: |
+            git checkout master
+            git pull origin master
+            git rm -rf .
+      - build_site:
+          name: Create the site
+          working_directory: ~/myshoggoth
+          command: stack exec -- myShoggoth build
+      - commit_master:
+          name: Commit the updated site
+          working_directory: ~/myshoggoth/_site
+          command: |
+            git status
+            git add -all
+            git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
+            git push origin master
+      - commit_hakyll:
+          name: Commit the hakyll branch
+          working_directory: ~/myshoggoth
+          command: |
             git status
             git add _site/
             git commit -m "Update _site (`date '+%F %T %Z'`) [ci skip]"
-            # Push
             git push origin hakyll
