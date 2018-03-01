@@ -48,8 +48,6 @@ jobs:
           command: |
             git status
             git add --all
-            git status
-            ls -alF
             git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
             git push origin master
       - run:
