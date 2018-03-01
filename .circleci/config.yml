@@ -21,23 +21,23 @@ jobs:
             - ~/myshoggoth/.stack-work
             - /root/.stack/
           key: v1-stack-work-{{ checksum "myShoggoth.cabal" }}
-      - initialize_submodules:
+      - run:
           name: Prepare the git submodules
           command: |
             git submodule init
             git submodule update
-      - checkout_master:
+      - run:
           name: Checkout the master branch (live site)
           working_directory: ~/myshoggoth/_site
           command: |
             git checkout master
             git pull origin master
             git rm -rf .
-      - build_site:
+      - run:
           name: Create the site
           working_directory: ~/myshoggoth
           command: stack exec -- myShoggoth build
-      - commit_master:
+      - deploy:
           name: Commit the updated site
           working_directory: ~/myshoggoth/_site
           command: |
@@ -45,7 +45,7 @@ jobs:
             git add -all
             git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
             git push origin master
-      - commit_hakyll:
+      - run:
           name: Commit the hakyll branch
           working_directory: ~/myshoggoth
           command: |
