@@ -8,6 +8,9 @@ jobs:
       only:
         - hakyll
     steps:
+      - add-ssh-keys
+        fingerprints:
+          - "ee:d1:80:91:a3:b6:af:28:59:4d:de:a0:41:5a:56:3e"
       - checkout
       - restore_cache:
           keys:
