@@ -3,14 +3,11 @@ jobs:
   build:
     working_directory: ~/myshoggoth
     docker:
-      - image: fpco/stack-build
+      - image: futtetennista/hakyll:latest
     branches:
       only:
-        - hakyll
+        - source
     steps:
-      - add-ssh-keys
-        fingerprints:
-          - "ee:d1:80:91:a3:b6:af:28:59:4d:de:a0:41:5a:56:3e"
       - checkout
       - restore_cache:
           keys:
@@ -24,40 +21,18 @@ jobs:
             - ~/myshoggoth/.stack-work
             - /root/.stack/
           key: v1-stack-work-{{ checksum "myShoggoth.cabal" }}
-      - run:
-          name: Prepare the git submodules
-          command: |
-            git config --global user.email circleci@circleci
-            git config --global user.name CircleCI
-            git submodule init
-            git submodule update
-      - run:
-          name: Checkout the master branch (live site)
-          working_directory: ~/myshoggoth/_site
-          command: |
-            git checkout master
-            git pull origin master
-            git rm -rf .
-            ls -alF
-      - run:
-          name: Create the site
-          working_directory: ~/myshoggoth
-          command: |
-            stack exec -- myShoggoth build
-            ls -alF
       - deploy:
-          name: Commit the updated site
-          working_directory: ~/myshoggoth/_site
+          name: Deploy master to Github Pages
           command: |
-            git status
+            git config --global user.email robots@circleci.com
+            git config --global user.name CircleCI
+            stack exec site rebuild
+            git checkout master
+            git pull --rebase
+            # Overwrite existing files with new files
+            cp -a _site/. .
+            #  Commit
             git add --all
-            git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
-            git push origin master
-      - run:
-          name: Commit the hakyll branch
-          working_directory: ~/myshoggoth
-          command: |
-            git status
-            git add _site/
-            git commit -m "Update _site (`date '+%F %T %Z'`) [ci skip]"
-            git push origin hakyll
+            git commit -m "[`date '+%F %T %Z'`] New release"
+            # Push
+            git push origin master:master
