@@ -15,7 +15,9 @@ jobs:
             - stack-work-
       - run:
           name: Build site executable
-          command: stack build
+          command: |
+            stack setup
+            stack build
       - save_cache:
           paths:
             - ~/myshoggoth/.stack-work
