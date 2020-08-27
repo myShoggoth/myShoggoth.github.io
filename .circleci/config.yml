@@ -15,7 +15,7 @@ jobs:
           name: Disable prompting for host etc.
           command: |
             mkdir -p ~/.ssh
-            echo 'Host \*' >> ~/.ssh/config
+            echo 'Host *' >> ~/.ssh/config
             echo 'StrictHostKeyChecking no' >> ~/.ssh/config
             echo 'UserKnownHostsFile=/dev/null' >> ~/.ssh/config
       - checkout
