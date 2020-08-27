@@ -16,10 +16,10 @@ jobs:
           command: |
             mkdir -p ~/.ssh
             cat << EOF > ~/.ssh/config
-Host *
-    StrictHostKeyChecking no
-    UserKnownHostsFile=/dev/null
-EOF
+            Host *
+              StrictHostKeyChecking no
+              UserKnownHostsFile=/dev/null
+            EOF
             chmod 0400 ~/.ssh/config
       - checkout
       - restore_cache:
