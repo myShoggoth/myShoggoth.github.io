@@ -2,12 +2,12 @@ name:                myShoggoth
 version:             0.1.0.0
 -- synopsis:
 -- description:
-homepage:            https://github.com/githubuser/myShoggoth#readme
+homepage:            https://github.com/myShoggoth/myShoggoth.github.io/blob/hakyll/README.md
 license:             BSD3
 license-file:        LICENSE
-author:              Author name here
-maintainer:          example@example.com
-copyright:           2017 Author name here
+author:              Andrew F. Boardman
+maintainer:          andrew@myshoggoth.com
+copyright:           2017-2000 Andrew F. Boardman
 category:            Web
 build-type:          Simple
 extra-source-files:  README.md

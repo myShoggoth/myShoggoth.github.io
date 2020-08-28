@@ -3,14 +3,6 @@
 import           Data.Monoid (mappend)
 import           Hakyll
 import           Hakyll.Web.Sass (sassCompiler)
-{-|
-import qualified Data.ByteString.Lazy as B
-import           Data.Word (Word16)
-import           Data.ByteString.Builder
-import           Data.Bits
-
-import Debug.Trace
--}
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
