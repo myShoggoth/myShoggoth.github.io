@@ -11,25 +11,22 @@ jobs:
       - add-ssh-keys:
           fingerprints:
             - "8b:db:de:04:41:ac:bb:03:b0:4d:8d:46:ab:bd:a5:bb"
-      - run:
-          name: Disable prompting for host etc.
-          command: |
-            mkdir -p ~/.ssh
-            cat << EOF > ~/.ssh/config
-            Host *
-              StrictHostKeyChecking no
-              UserKnownHostsFile=/dev/null
-            EOF
-            chmod 0400 ~/.ssh/config
       - checkout
       - restore_cache:
           keys:
             - v1-stack-{{ checksum "myShoggoth.cabal" }}
             - stack-work-
       - run:
-          name: Build site executable
+          name: Setup stack and GHC
           command: |
             stack setup
+      - run:
+          name: Build dependencies
+          command: |
+            stack build --only-depdendencies
+      - run:
+          name: Build site executable
+          command: |
             stack build
       - save_cache:
           paths:

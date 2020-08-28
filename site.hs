@@ -85,7 +85,7 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 dotFileRoute :: Routes
 dotFileRoute = customRoute $
-    (. :) . toFilePath
+    ('.' :) . toFilePath
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
