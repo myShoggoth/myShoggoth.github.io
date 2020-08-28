@@ -75,6 +75,10 @@ main = hakyll $ do
         route idRoute
         compile copyFileCompiler
 
+    match ".gitignore" $ do
+        route idRoute
+        compile copyFileCompiler
+        
     match "templates/**" $ compile templateCompiler
 
 
