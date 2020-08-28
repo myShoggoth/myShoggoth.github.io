@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Build dependencies
           command: |
-            stack build --only-depdendencies
+            stack build --only-dependencies
       - run:
           name: Build site executable
           command: |
