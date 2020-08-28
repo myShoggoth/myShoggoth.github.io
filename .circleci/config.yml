@@ -10,7 +10,7 @@ jobs:
     steps:
       - add-ssh-keys:
           fingerprints:
-            - "ee:d1:80:91:a3:b6:af:28:59:4d:de:a0:41:5a:56:3e"
+            - "8b:db:de:04:41:ac:bb:03:b0:4d:8d:46:ab:bd:a5:bb"
       - run:
           name: Disable prompting for host etc.
           command: |
