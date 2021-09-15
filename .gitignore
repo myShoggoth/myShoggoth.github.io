@@ -19,5 +19,5 @@ cabal.sandbox.config
 .stack-work/
 _cache/
 _site/
-.stack.yaml.lock
+stack.yaml.lock
 
