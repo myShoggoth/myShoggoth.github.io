@@ -45,12 +45,6 @@ jobs:
           path: ~/.stack
           key: ${{ runner.os }}-${{ matrix.ghc }}-stack
 
-      - uses: actions/cache@v1
-        name: Cache ~/myshoggoth/.stack-work
-        with:
-          path: ~/myshoggoth/.stack-work
-          key: ${{ runner.os }}-${{ matrix.ghc }}-stack-work
-
       - name: Build dependencies
         run: stack build --system-ghc --only-dependencies
 
