@@ -20,7 +20,7 @@ imgname: DSC_0030
               allowfullscreen="true">
           </iframe>
         </div>
-        <h5 class="text-center description">Andrew is sometimes programming, sometimes having a community discussion in his role as the Executive Director of the Haskell Foundation, and who knows what else?</h5>
+        <h5 class="text-center description">Andrew is sometimes programming, sometimes having a community discussion, and who knows what else?</h5>
       </div>
     </div>
   </div>
@@ -50,6 +50,38 @@ imgname: DSC_0030
               <h5 class="card-title">
                 <a href="$url$">$title$</a>
               </h5>
+              <p class="card-description">
+                $description$
+              </p>
+            </div>
+          </div>
+        </div>
+      $endfor$
+    </div>
+  </div>
+</div>
+
+<div class="section section-components" id="videos">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <h2 class="text-center title">Videos
+          <br><small class="description">Weirdo talks.</small>
+        </h2>
+        <h5 class="text-center description"></h5>
+      </div>
+    </div>
+    <div class="row">
+      $for(videos)$
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-blog" data-background-color="black">
+            <div class="card-body">
+              <h5 class="card-title">
+                $title$
+              </h5>
+              <iframe id="ytplayer" type="text/html" width="320" height="180"
+              src="https://www.youtube.com/embed/$youtubeid$?autoplay=1&origin=https://myshoggoth.com"
+              frameborder="0"></iframe>
               <p class="card-description">
                 $description$
               </p>
@@ -130,13 +162,19 @@ imgname: DSC_0030
       to negotiate with the same information as VCs. They quickly pivoted to a SaaS
       capitalization table product.</p>
 
+      <p>He entered the Haskell world in 2018 by joining SimSpace as an individual contributor
+      Haskell programmer, eventually becoming an Engineering Manager.
+      </p>
+
       <div class="photo-container">
          <img src="./assets/img/highres_459213443.jpeg" alt="Andrew giving a talk" class="rounded img-raised">
       </div>
 
       <p>He became convinced that the <a href="https://haskell.org">Haskell programming language</a> is the right way forward for tackling the hardest problems in computer science, and after using it in a startup he worked at <a href="https://simspace.com">SimSpace</a>, a CyberSecurity company, where he learned how to use it in production.</p> 
 
-      <p>Andrew is now the Executive Director of <a src="https://haskell.foundation">the Haskell Foundation</a>, a non-profit dedicated to improving the Haskell language and ecosystem, and driving its adoption.</p>
+      <p>Andrew is now a Director of Engineering at <a src="https://well.co">Well</a>, a healthcare startup that merges machine
+        learning, clinical excellence, and a concierge service to help members be successful
+        improving and managing their health.</p>
 
       </div>
     </div>
