@@ -22,3 +22,5 @@ _site/
 stack.yaml.lock
 dist-newstyle/
 
+### General ###
+*~
