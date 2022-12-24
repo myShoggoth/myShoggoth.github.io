@@ -4,24 +4,34 @@ description: Selected readings, writings, and arithmetics.
 imgname: DSC_0030
 ---
 
-<div class="section section-components" data-background-color="black" id="live">
+<div class="section section-components" id="videos">
   <div class="container">
     <div class="row">
       <div class="col-md-8 ml-auto mr-auto">
-        <h2 class="text-center title">Live Streaming
-          <br><small class="description">Head banging the nerdy way.</small></h2>
-        <div class="text-center">
-          <iframe
-              src="https://player.twitch.tv/?channel=myShoggoth&parent=myshoggoth.com&muted=true"
-              height="360"
-              width="640"
-              frameborder="0"
-              scrolling="no"
-              allowfullscreen="true">
-          </iframe>
-        </div>
-        <h5 class="text-center description">Andrew is sometimes programming, sometimes having a community discussion, and who knows what else?</h5>
+        <h2 class="text-center title">Videos
+          <br><small class="description">Weirdo talks.</small>
+        </h2>
+        <h5 class="text-center description"></h5>
       </div>
+    </div>
+    <div class="row">
+      $for(videos)$
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-blog" data-background-color="black">
+            <div class="card-body">
+              <h5 class="card-title">
+                $title$
+              </h5>
+              <iframe id="ytplayer" type="text/html" width="320" height="180"
+              src="https://www.youtube.com/embed/$youtubeid$?autoplay=1&origin=https://myshoggoth.com"
+              frameborder="0"></iframe>
+              <p class="card-description">
+                $description$
+              </p>
+            </div>
+          </div>
+        </div>
+      $endfor$
     </div>
   </div>
 </div>
@@ -50,38 +60,6 @@ imgname: DSC_0030
               <h5 class="card-title">
                 <a href="$url$">$title$</a>
               </h5>
-              <p class="card-description">
-                $description$
-              </p>
-            </div>
-          </div>
-        </div>
-      $endfor$
-    </div>
-  </div>
-</div>
-
-<div class="section section-components" id="videos">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 ml-auto mr-auto">
-        <h2 class="text-center title">Videos
-          <br><small class="description">Weirdo talks.</small>
-        </h2>
-        <h5 class="text-center description"></h5>
-      </div>
-    </div>
-    <div class="row">
-      $for(videos)$
-        <div class="col-md-6 col-lg-4">
-          <div class="card card-blog" data-background-color="black">
-            <div class="card-body">
-              <h5 class="card-title">
-                $title$
-              </h5>
-              <iframe id="ytplayer" type="text/html" width="320" height="180"
-              src="https://www.youtube.com/embed/$youtubeid$?autoplay=1&origin=https://myshoggoth.com"
-              frameborder="0"></iframe>
               <p class="card-description">
                 $description$
               </p>
@@ -128,6 +106,28 @@ imgname: DSC_0030
           </div>
         </div>
       $endfor$
+    </div>
+  </div>
+</div>
+
+<div class="section section-components" data-background-color="black" id="live">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <h2 class="text-center title">Live Streaming
+          <br><small class="description">Head banging the nerdy way.</small></h2>
+        <div class="text-center">
+          <iframe
+              src="https://player.twitch.tv/?channel=myShoggoth&parent=myshoggoth.com&muted=true"
+              height="360"
+              width="640"
+              frameborder="0"
+              scrolling="no"
+              allowfullscreen="true">
+          </iframe>
+        </div>
+        <h5 class="text-center description">Andrew is sometimes programming, sometimes having a community discussion, and who knows what else?</h5>
+      </div>
     </div>
   </div>
 </div>
