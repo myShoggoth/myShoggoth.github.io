@@ -4,6 +4,48 @@ description: Selected readings, writings, and arithmetics.
 imgname: DSC_0030
 ---
 
+<div class="section section-components" id="puzzles">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <h2 class="text-center title">Puzzles
+          <br><small class="description">Little logic puzzles, mostly sudokus.</small>
+        </h2>
+        <h5 class="text-center description"></h5>
+      </div>
+    </div>
+    <div class="row">
+      $for(videos)$
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-blog" data-background-color="black">
+            $if(imgname)$
+            <div class="card-image">
+              <a href="$ctc$">
+                <img class="img rounded" src="assets/img/$image$">
+              </a>
+            </div>
+          $endif$
+         <div class="card-body">
+              <h5 class="card-title">
+                $title$
+              </h5>
+              <dl>
+                <dt>Cracking the Cryptic</dt>
+                <dd><a href="$ctc$">Play on Cracking the Cryptic</a></dd>
+                <dt>F-Puzzles</dt>
+                <dd><a href="$fpuzzles$">Play on F-Puzzles</a></dd>
+              </dl>
+              <p>
+                $rules$
+              </p>
+            </div>
+          </div>
+        </div>
+      $endfor$
+    </div>
+  </div>
+</div>
+
 <div class="section section-components" id="videos">
   <div class="container">
     <div class="row">

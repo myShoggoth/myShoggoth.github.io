@@ -55,17 +55,26 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/page.html" postCtx
             >>= relativizeUrls
 
+    match "puzzles/*.markdown" $ do
+        route $ setExtension "html"
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/puzzle.html" postCtx
+            >>= loadAndApplyTemplate "templates/page.html" postCtx
+            >>= relativizeUrls
+
     match "index.html" $ do
         route idRoute
         compile $ do
             posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
             projects <- fmap (take 10) . recentFirst =<< loadAll "projects/*"
             videos <- fmap (take 10) . recentFirst =<< loadAll "videos/*"
+            puzzles <- fmap (take 10) . recentFirst =<< loadAll "puzzles/*"
 
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     listField "projects" postCtx (return projects) `mappend`
                     listField "videos" postCtx (return videos) `mappend`
+                    listField "puzzles" postCtx (return puzzles) `mappend`
                     defaultContext
 
             getResourceBody
