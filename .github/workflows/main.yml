@@ -28,22 +28,22 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          ref: hakyll
 
-      - uses: haskell/actions/setup@v1
+      - uses: haskell/actions/setup@v2
         name: Setup Haskell Stack
         with:
           ghc-version: ${{ matrix.ghc }}
           stack-version: ${{ matrix.stack }}
 
-      - uses: actions/cache@v1
+      - uses: actions/cache@v3
         name: Cache ~/.stack
         with:
           path: ~/.stack
-          key: ${{ runner.os }}-${{ matrix.ghc }}-stack
+          key: ${{ runner.os }}-${{ matrix.ghc }}-${{ github.sha }}
+          restore-keys: ${{ runner.os }}-${{ matrix.ghc }}-
 
       - name: Build dependencies
         run: stack build --system-ghc --only-dependencies
@@ -51,12 +51,15 @@ jobs:
       - name: Build site executable
         run: stack build --system-ghc
 
-      # Runs a set of commands using the runners shell
+      - name: Build site
+        run:  stack exec --system-ghc myShoggoth rebuild
+
       - name: Deploy
+        # Deploy only from non-pull-request changes to hakyll branch
+        if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/hakyll'}}
         run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
-            stack exec --system-ghc myShoggoth rebuild
             git checkout master
             git pull --rebase
             # Overwrite existing files with new files
