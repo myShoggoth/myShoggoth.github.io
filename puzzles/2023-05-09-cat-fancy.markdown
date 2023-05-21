@@ -1,0 +1,7 @@
+---
+title: Cat Fancy
+rules: Normal sudoku rules apply. German whisper lines (green) - adjacent digits differ by at least 5. Digits separated by black dots have a 1:2 ratio. Not all black dots are necessarily given.
+f-puzzles: https://f-puzzles.com/?id=2ppfl2ec
+ctc: https://tinyurl.com/mt4pyx8n
+imgname: Cat Fancy.png
+---
