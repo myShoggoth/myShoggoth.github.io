@@ -20,7 +20,7 @@ imgname: DSC_0030
           <div class="card card-blog" data-background-color="black">
             $if(imgname)$
             <div class="card-image">
-              <a href="$ctc$">
+              <a href="$url$">
                 <img class="img rounded" src="assets/img/$imgname$">
               </a>
             </div>
@@ -29,12 +29,11 @@ imgname: DSC_0030
               <h5 class="card-title">
                 $title$
               </h5>
-              <dl>
-                <dt>Cracking the Cryptic</dt>
-                <dd><a href="$ctc$">Play on Cracking the Cryptic</a></dd>
-                <dt>F-Puzzles</dt>
-                <dd><a href="$f-puzzles$">Play on F-Puzzles</a></dd>
-              </dl>
+	      Play at:
+              <ul>
+		      <li><a href="$ctc$">Cracking the Cryptic</a></li>
+		      <li><a href="$f-puzzles$">F-Puzzles</a></li>
+              </ul>
               <p>
                 $rules$
               </p>

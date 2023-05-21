@@ -1,23 +1,24 @@
-<div class="container">
-    <div class="row">
-      <div class="col-md-8 ml-auto mr-auto">
-        <div class="card card-plain blog">
-          <div class="card-title">&nbsp;</div>
-          <div class="card-image">
-            <a href="$ctc$">
-              <img class="img rounded" src="assets/img/$image$">
-            </a>
-          </div>
-          <dl>
-            <dt>Cracking the Cryptic</dt>
-            <dd><a href="$ctc$">Play on Cracking the Cryptic</a></dd>
-            <dt>F-Puzzles</dt>
-            <dd><a href="$f-puzzles$">Play on F-Puzzles</a></dd>
-          </dl>
-          <p>$rules$</p>
-          $body$
-        </div>
-      </div>
-    </div>
-  </div>
-  
+<div class="col-md-6 col-lg-4">
+	<div class="card card-blog" data-background-color="black">
+		$if(imgname)$
+			<div class="card-image">
+				<a href="$url$">
+					<img class="img rounded" src="/assets/img/$imgname$">
+				</a>
+			</div>
+		$endif$
+	<div class="card-body">
+		<h5 class="card-title">
+			$title$
+		</h5>
+		Play at:
+		<ul>
+			<li><a href="$ctc$">Cracking the Cryptic</a></li>
+			<li><a href="$f-puzzles$">F-Puzzles</a></li>
+		</ul>
+		<p>
+			$rules$
+		</p>
+	</div>
+	$body$
+</div>
