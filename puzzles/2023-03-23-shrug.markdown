@@ -1,0 +1,7 @@
+---
+title: Shrug
+rules: Normal sudoku rules apply. White dots separate digits that are the specified number apart, 1 if the dot is empty. The numbers along an arrow sum to the value in the circle.
+f-puzzles: https://f-puzzles.com/?id=2ku8lju2
+ctc: https://tinyurl.com/2s4xv765
+imgname: Shrug.png
+---
