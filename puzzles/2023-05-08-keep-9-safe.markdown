@@ -1,0 +1,7 @@
+---
+title: Keep 9 Safe
+rules: Normal sudoku rules apply. Orthogonally adjacent cells must not contain consecutive numbers. Digits must strictly increase along thermometers starting at the bulb end.
+f-puzzles: https://f-puzzles.com/?id=2l3crkal
+ctc: https://f-puzzles.com/?id=2l3crkal
+imgname: Keep 9 Safe.png
+---
