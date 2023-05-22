@@ -1,11 +1,16 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE BangPatterns #-}
 import           Data.Monoid (mappend)
 import           Hakyll
 import           Hakyll.Web.Sass (sassCompiler)
+
+import Debug.Trace
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
+    match "templates/**" $ compile templateCompiler
+
     match "assets/img/**" $ do
         route   idRoute
         compile copyFileCompiler
@@ -30,7 +35,7 @@ main = hakyll $ do
     match "posts/*.markdown" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= loadAndApplyTemplate "templates/post.html" postCtx
             >>= loadAndApplyTemplate "templates/page.html" postCtx
             >>= relativizeUrls
 
@@ -66,9 +71,9 @@ main = hakyll $ do
         route idRoute
         compile $ do
             posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
-            projects <- fmap (take 10) . recentFirst =<< loadAll "projects/*"
-            videos <- fmap (take 10) . recentFirst =<< loadAll "videos/*"
-            puzzles <- fmap (take 10) . recentFirst =<< loadAll "puzzles/*"
+            projects <- fmap (take 10) . recentFirst =<< loadAll "projects/*.markdown"
+            videos <- fmap (take 10) . recentFirst =<< loadAll "videos/*.markdown"
+            puzzles <- fmap (take 3) . recentFirst =<< loadAll "puzzles/*.markdown"
 
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
@@ -86,11 +91,19 @@ main = hakyll $ do
         route idRoute
         compile copyFileCompiler
 
-    match "gitignore" $ do
-        route dotFileRoute
-        compile copyFileCompiler
-        
-    match "templates/**" $ compile templateCompiler
+    match "puzzles/index.html" $ do
+        route idRoute
+        compile $ do
+            puzzles <- recentFirst =<< loadAll "puzzles/*.markdown"
+
+            let indexCtx =
+                    listField "puzzles" postCtx (return puzzles) `mappend`
+                    defaultContext
+
+            getResourceBody
+                >>= applyAsTemplate indexCtx
+                >>= loadAndApplyTemplate "templates/page.html" indexCtx
+                >>= relativizeUrls
 
 
 --------------------------------------------------------------------------------
