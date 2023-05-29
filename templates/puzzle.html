@@ -10,11 +10,20 @@
 	<div class="card-body">
 		<h5 class="card-title">
 			$title$
+			$if(author)$
+			<small>by $author$</small>
+			$else$
+			<small>by myShoggoth</small>
+			$endif$
 		</h5>
 		Play at:
 		<ul>
+			$if(ctc)$
 			<li><a href="$ctc$">Cracking the Cryptic</a></li>
+			$endif$
+			$if(f-puzzles)$
 			<li><a href="$f-puzzles$">F-Puzzles</a></li>
+			$endif$
 		</ul>
 		<p>
 			$rules$
