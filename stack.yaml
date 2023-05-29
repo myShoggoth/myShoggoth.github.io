@@ -40,7 +40,7 @@ packages:
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)
 extra-deps: [
-    hakyll-4.14.1.0
+    hakyll-4.16.0.0
   , hakyll-sass-0.2.4
   , lrucache-1.2.0.1
 ]
