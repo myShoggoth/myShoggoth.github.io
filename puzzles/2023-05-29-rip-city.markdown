@@ -1,0 +1,7 @@
+---
+title: RIP City
+rules: Normal sudoku rules apply. Clues outside the grid indicate how many numbers are "seen" along the row/column, where being seen occurs when the number is larger than the digits closer to the clue.
+f-puzzles: https://f-puzzles.com/?id=2hrwya6l
+ctc: https://tinyurl.com/2scyphsy
+imgname: RIP City.png
+---

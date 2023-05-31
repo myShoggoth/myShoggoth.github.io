@@ -1,0 +1,7 @@
+---
+title: Sick Day
+rules: Normal sudoku rules apply. Digits along thermometers must strictly increase from the bulb end. Black dots separate digits with a 1:2 ratio, digits separated by white dots are consecutive. Not all dots are necessarily given.
+f-puzzles: https://f-puzzles.com/?id=2pac9ddw
+ctc: https://tinyurl.com/6wsskc97
+imgname: Sick Day.png
+---
