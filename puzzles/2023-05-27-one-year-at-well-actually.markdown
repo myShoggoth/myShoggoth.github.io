@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Digits along the green German Whisper lines mu
 f-puzzles: https://f-puzzles.com/?id=2lxlsaw2
 ctc: https://tinyurl.com/4bd2w8tm
 imgname: One Year at Well, Actually.png
+difficulty: 2.5
 ---

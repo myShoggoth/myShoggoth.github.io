@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Digits in cages must add up to the total indic
 f-puzzles: https://f-puzzles.com/?id=2l33ud5n
 ctc: https://tinyurl.com/3nxdepv9
 imgname: Sevens by Fives.png
+difficulty: 1.5
 ---

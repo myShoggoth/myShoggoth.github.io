@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply.  Digits separated by a V have sum to 5, those 
 f-puzzles: https://f-puzzles.com/?id=2ov5qc3d
 ctc: https://tinyurl.com/v34t4jtb
 imgname: A Puzzle for Ruth.png
+difficulty: 2
 ---

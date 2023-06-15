@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Clues outside the grid indicate how many numbe
 f-puzzles: https://f-puzzles.com/?id=2hrwya6l
 ctc: https://tinyurl.com/2scyphsy
 imgname: RIP City.png
+difficulty: 2
 ---

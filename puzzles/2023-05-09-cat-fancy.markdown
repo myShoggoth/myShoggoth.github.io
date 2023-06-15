@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. German whisper lines (green) - adjacent digits
 f-puzzles: https://f-puzzles.com/?id=2ppfl2ec
 ctc: https://tinyurl.com/mt4pyx8n
 imgname: Cat Fancy.png
+difficulty: 2
 ---

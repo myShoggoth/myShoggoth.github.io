@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Digits in cages must add up to the total indic
 f-puzzles: https://f-puzzles.com/?id=2eoqoof3
 ctc: https://tinyurl.com/53j3ahyz
 imgname: A Murder of Killers.png
+difficulty: 2
 ---

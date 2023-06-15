@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Digits in killer cages sum to the number in th
 f-puzzles: https://f-puzzles.com/?id=2h6mtjqr
 ctc: https://tinyurl.com/4n5ruy4x
 imgname: Killer Break-in.png
+difficulty: 2
 ---

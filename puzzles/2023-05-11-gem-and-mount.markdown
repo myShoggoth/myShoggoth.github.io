@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Grey lines are palindromes, digits must read t
 f-puzzles: https://f-puzzles.com/?id=2n6kuaz7
 ctc: https://tinyurl.com/4m539j7f
 imgname: Gem and Mount.png
+difficulty: 2
 ---

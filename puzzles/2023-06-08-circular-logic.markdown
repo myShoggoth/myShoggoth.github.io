@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Digits separated by a small white dot are cons
 f-puzzles: https://f-puzzles.com/?id=24sm8szu
 ctc: https://tinyurl.com/27wb6hy7
 imgname: Circular Logic.png
+difficulty: 1.5
 ---

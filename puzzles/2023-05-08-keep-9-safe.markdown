@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Orthogonally adjacent cells must not contain c
 f-puzzles: https://f-puzzles.com/?id=2eskolta
 ctc: https://tinyurl.com/2p979zyj
 imgname: Keep 9 Safe v2.png
+difficulty: 2
 ---

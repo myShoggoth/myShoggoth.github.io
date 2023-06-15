@@ -17,6 +17,9 @@
 			<br><small>by myShoggoth</small>
 			$endif$
 		</h5>
+		$if(difficulty)$
+		<div>Difficulty: $difficulty$/5</div>
+		$endif$
 		Play at:
 		<ul>
 			$if(ctc)$
@@ -29,5 +32,13 @@
 		<p>
 			$rules$
 		</p>
+		$if(solve-jcgodart)$
+		<div>Video solves:</div>
+		<ul>
+			$if(solve-jcgodart)$
+			<li><a href="$solve-jcgodart">JC Godart Sudoku</a></li>
+			$endif$
+		</ul>
+		$endif$
 	</div>
 </div>

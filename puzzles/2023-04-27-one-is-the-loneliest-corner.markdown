@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Disjoint Groups - Cells in the same position w
 f-puzzles: https://f-puzzles.com/?id=2cw3hgek
 ctc: https://tinyurl.com/5dh7y9rj
 imgname: One is the Loneliest Corner.png
+difficulty: 2
 ---

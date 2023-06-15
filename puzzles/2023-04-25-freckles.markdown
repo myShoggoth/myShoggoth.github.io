@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Digits separated by a black dot have a 1:2 rat
 f-puzzles: https://f-puzzles.com/?id=28c2anah
 ctc: https://tinyurl.com/2hf5cw9y
 imgname: Freckles.png
+difficulty: 2.5
 ---

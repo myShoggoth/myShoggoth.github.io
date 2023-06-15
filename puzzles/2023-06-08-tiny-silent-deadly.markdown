@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Digits along green German Whispers lines must 
 f-puzzles: https://f-puzzles.com/?id=2ao7d8ok
 ctc: https://tinyurl.com/4p8uwsu7
 imgname: Tiny, Silent, Deadly.png
+difficulty: 1
 ---

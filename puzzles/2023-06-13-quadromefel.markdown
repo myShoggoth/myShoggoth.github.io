@@ -4,4 +4,6 @@ rules: Normal sudoku rules apply. Digits in circles must appear in one of the su
 f-puzzles: https://f-puzzles.com/?id=28atf8gk
 ctc: https://tinyurl.com/2ur6h85f 
 imgname: Quadromefel.png
+solve-jcgodart: https://www.youtube.com/watch?v=gvlc1aB3EKU
+difficulty: 2
 ---

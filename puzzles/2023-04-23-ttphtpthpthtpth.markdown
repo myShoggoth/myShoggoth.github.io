@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Digits along a gray palindrome line must read 
 f-puzzles: https://f-puzzles.com/?id=24j7bzz5
 ctc: https://tinyurl.com/dvfnybn6
 imgname: Ttphtpthpthtpth v2.png
+difficulty: 2.5
 ---

@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Digits separated by a small white dot are cons
 f-puzzles: https://f-puzzles.com/?id=2ff6omqm
 ctc: https://tinyurl.com/ydp4raae
 imgname: Wink.png
+difficulty: 1
 ---
