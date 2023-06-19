@@ -5,4 +5,5 @@ f-puzzles: https://f-puzzles.com/?id=2ov5qc3d
 ctc: https://tinyurl.com/v34t4jtb
 imgname: A Puzzle for Ruth.png
 difficulty: 2
+solve-bremster: https://www.youtube.com/watch?v=RTiyIrjyniA
 ---
