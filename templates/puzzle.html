@@ -32,8 +32,13 @@
 		<p>
 			$rules$
 		</p>
-		$if(solve-jcgodart || solve-bremster)$
+		$if(solve-jcgodart)$
 		<div>Solve videos:</div>
+		$else$
+	    $if(solve-bremster)$
+		<div>Solve videos:</div>
+		$endif$
+		$endif$
 		<ul>
 			$if(solve-bremster)$
 			<li><a href="$solve-bremster$">BremSter</a></li>
@@ -42,6 +47,5 @@
 			<li><a href="$solve-jcgodart$">JC Godart Sudoku</a></li>
 			$endif$
 		</ul>
-		$endif$
 	</div>
 </div>
