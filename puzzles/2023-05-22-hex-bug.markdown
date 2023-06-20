@@ -4,4 +4,5 @@ author: Kalliwyn
 rules: Normal sudoku rules apply. Numbers outside the grid are sandwich sums, which show the sum of the numbers between 1 and 9 in the given row or column. Arrows outside the grid are little killers, which show the sum of all the digits on the given diagonal. Thermos must strictly increase from the bulb to the tip. Digits separated by a X must sum to ten, and digits separated by a V must sum to five. There are no negative constraints.
 ctc: https://tinyurl.com/2x75t7pe
 imgname: Hex Bug bremster.png
+solve-bremster: https://www.youtube.com/watch?v=rS7qXFGUkgY
 ---
