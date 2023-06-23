@@ -20,6 +20,12 @@
 		$if(difficulty)$
 		<div>Difficulty: $difficulty$/5</div>
 		$endif$
+		$if(player-1)$
+		<ol>
+			<li><a href="$player-1$">Player 1</a></li>
+			<li><a href="$player-2$">Player 2</a></li>
+		</ol>
+		$else$
 		Play at:
 		<ul>
 			$if(ctc)$
@@ -29,6 +35,7 @@
 			<li><a href="$f-puzzles$">F-Puzzles</a></li>
 			$endif$
 		</ul>
+		$endif$
 		<p>
 			$rules$
 		</p>

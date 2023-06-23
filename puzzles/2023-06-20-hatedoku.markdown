@@ -1,0 +1,6 @@
+---
+title: Hatedoku
+rules: Normal sudoku rules apply. Digits a chess knight's move apart cannot be the same. Disjoint Groups - Cells in the same position within two 3x3 boxes cannot contain the same digit. Digits along the diagonal line may not repeat.
+ctc: https://tinyurl.com/55sprej2
+imgname: Hatedoku.png
+---

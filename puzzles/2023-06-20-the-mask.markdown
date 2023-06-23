@@ -1,0 +1,6 @@
+---
+title: The Mask
+rules: Normal sudoku rules apply. Digits along slow thermometers stay the same or increase as they move away from the bulb.
+ctc: https://tinyurl.com/2smrbhj3
+imgname: The Mask.png
+---
