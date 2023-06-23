@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Digits in cages must add up to the total indic
 f-puzzles: https://f-puzzles.com/?id=2kpwrtxt
 ctc: https://tinyurl.com/ycksae7e
 imgname: Negative Five Naked Singles.png
+difficulty: 3
 ---

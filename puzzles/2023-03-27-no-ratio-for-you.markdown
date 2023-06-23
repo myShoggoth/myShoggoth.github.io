@@ -4,4 +4,5 @@ rules: Normal sudoku rules apply. Digits in cages must add up to the total indic
 f-puzzles: https://f-puzzles.com/?id=2p34ohqv
 ctc: https://tinyurl.com/3zs3rxda
 imgname: No Ratio For You.png
+difficulty: 2
 ---
