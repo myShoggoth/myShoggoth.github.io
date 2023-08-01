@@ -4,5 +4,6 @@ rules: Normal sudoku rules apply. Digits separated by a small white dot are cons
 f-puzzles: https://f-puzzles.com/?id=28hvyoj6
 ctc: https://tinyurl.com/4ektbz9n
 imgname: Yatta!.png
+solve-rangsk: https://www.youtube.com/watch?v=qhJraFjRVQQ&t=190s
 difficulty: 3
 ---

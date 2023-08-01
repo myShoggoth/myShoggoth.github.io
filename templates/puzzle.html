@@ -44,11 +44,18 @@
 		$else$
 	    $if(solve-bremster)$
 		<div>Solve videos:</div>
+		$else$
+		$if(solve-rangst)$
+		<div>Solve videos:</div>
 		$endif$
+		#endif$
 		$endif$
 		<ul>
 			$if(solve-bremster)$
 			<li><a href="$solve-bremster$">BremSter</a></li>
+			$endif$
+			$if(solve-rangst)$
+			<li><a href="$solve-rangst$">Rangst</a></li>
 			$endif$
 			$if(solve-jcgodart)$
 			<li><a href="$solve-jcgodart$">JC Godart Sudoku</a></li>
