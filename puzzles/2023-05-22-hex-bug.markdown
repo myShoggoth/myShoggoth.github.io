@@ -5,4 +5,5 @@ rules: Normal sudoku rules apply. Numbers outside the grid are sandwich sums, wh
 ctc: https://tinyurl.com/2x75t7pe
 imgname: Hex Bug bremster.png
 solve-bremster: https://www.youtube.com/watch?v=rS7qXFGUkgY
+difficulty: 1
 ---

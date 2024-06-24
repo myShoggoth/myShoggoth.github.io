@@ -4,4 +4,5 @@ rules: Standard sudoku rules apply. Digits inside the circles must appear in the
 f-puzzles: https://f-puzzles.com/?id=27tteats
 ctc: https://tinyurl.com/4jzb7dpw
 imgname: What is leg day for.png
+difficulty: 2
 ---

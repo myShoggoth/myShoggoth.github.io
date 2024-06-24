@@ -1,0 +1,6 @@
+---
+title: Big Step
+rules: Normal 6x6 sudoku rules apply. Digits separated by black dots have a 1:2 ration, those separated by a white dot are consecutive. Not all black or white dots are necessarily given.
+ctc: https://tinyurl.com/3xc357b3
+imgname: Big Step.png
+---
