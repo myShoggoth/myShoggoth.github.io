@@ -32,7 +32,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: haskell/actions/setup@v2
+      - uses: haskell-actions/setup@v2
         name: Setup Haskell Stack
         with:
           ghc-version: ${{ matrix.ghc }}
