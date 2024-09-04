@@ -15,6 +15,10 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
+    match "assets/pdf/**" $ do
+        route idRoute
+        compile copyFileCompiler
+
     match "assets/sass/now-ui-kit.scss" $ do
         route   $ constRoute "assets/css/now-ui-kit.css"
         let compressCssItem = fmap compressCss
