@@ -26,13 +26,24 @@
 			<li><a href="$player-2$">Player 2</a></li>
 		</ol>
 		$else$
+		$if(ctc)$
 		Play at:
+		$endif$
+		$if(f-puzzles)$
+		Play at:
+		$endif$
+		$if(pdf)$
+		Download at:
+		$endif$
 		<ul>
 			$if(ctc)$
 			<li><a href="$ctc$">Cracking the Cryptic</a></li>
 			$endif$
 			$if(f-puzzles)$
 			<li><a href="$f-puzzles$">F-Puzzles</a></li>
+			$endif$
+			$if(pdf)$
+			<li><a href="$pdf$"">PDF</a></li>
 			$endif$
 		</ul>
 		$endif$
